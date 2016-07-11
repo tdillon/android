@@ -5,12 +5,9 @@ android:
     # use the latest revision of Android SDK Tools
     # - platform-tools
     # - tools
-
-    # The BuildTools version used by your project
-    - build-tools-19.1.0
-
-    # The SDK version used to compile your project
-    - android-21
+    - build-tools-23.0.3
+    - android-23
+    - android-L
 
     # Additional components
     - extra-google-google_play_services

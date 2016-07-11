@@ -16,4 +16,4 @@ script:
 before_install:
 - openssl aes-256-cbc -K $encrypted_ac5b2a59fcae_key -iv $encrypted_ac5b2a59fcae_iv
   -in android.jks.enc -out android.jks -d
-- sudo gem install supply
+- gem install supply

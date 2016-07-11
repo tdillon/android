@@ -8,6 +8,7 @@ android:
   - extra
   - add-on
 script:
+- ls -R /usr/local/android-sdk/
 - "./gradlew assembleRelease"
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore android.jks app/build/outputs/apk/app-release-unsigned.apk fastlanetraviscipoc
 - zipalign -v 4 app/build/outputs/apk/app-release-unsigned.apk app/build/outputs/apk/app-release.apk

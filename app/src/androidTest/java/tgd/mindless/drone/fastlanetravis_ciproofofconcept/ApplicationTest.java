@@ -1,4 +1,4 @@
-package tgd.mindless.drone.calculatornumberone;
+package tgd.mindless.drone.fastlanetravis_ciproofofconcept;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,10 +1,18 @@
 language: android
 android:
   components:
-    - platform-tools
-    - tools
-    - build-tools-23.0.3
-    - android-23
-    - extra
-    - addon
-script: ./gradlew assembleRelease
+  - platform-tools
+  - tools
+  - build-tools-23.0.3
+  - android-23
+  - extra
+  - addon
+script:
+- ls -la app/build/outputs/apk
+- "./gradlew assembleRelease"
+- jarsigner -verbose -sigalg -storepass $storepass -keypass $keypass SHA1withRSA -digestalg SHA1 -keystore android.jks app/build/outputs/apk/app-release-unsigned.apk fastlanetraviscipoc
+- zipalign -v 4 app/build/outputs/apk/app-release-unsigned.apk app/build/outputs/apk/app-release.apk
+- ls -la app/build/outputs/apk
+before_install:
+- openssl aes-256-cbc -K $encrypted_ac5b2a59fcae_key -iv $encrypted_ac5b2a59fcae_iv
+  -in android.jks.enc -out android.jks -d

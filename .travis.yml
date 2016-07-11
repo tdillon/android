@@ -6,9 +6,8 @@ android:
   - build-tools-23.0.3
   - android-23
   - extra
-  - addon
+  - add-on
 script:
-- ls -la app/build/outputs/apk
 - "./gradlew assembleRelease"
 - jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore android.jks app/build/outputs/apk/app-release-unsigned.apk fastlanetraviscipoc
 - zipalign -v 4 app/build/outputs/apk/app-release-unsigned.apk app/build/outputs/apk/app-release.apk

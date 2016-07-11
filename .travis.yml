@@ -10,7 +10,7 @@ android:
 script:
 - ls -la app/build/outputs/apk
 - "./gradlew assembleRelease"
-- jarsigner -verbose -sigalg -storepass $storepass -keypass $keypass SHA1withRSA -digestalg SHA1 -keystore android.jks app/build/outputs/apk/app-release-unsigned.apk fastlanetraviscipoc
+- jarsigner -verbose -sigalg SHA1withRSA -storepass $storepass -keypass $keypass -digestalg SHA1 -keystore android.jks app/build/outputs/apk/app-release-unsigned.apk fastlanetraviscipoc
 - zipalign -v 4 app/build/outputs/apk/app-release-unsigned.apk app/build/outputs/apk/app-release.apk
 - ls -la app/build/outputs/apk
 before_install:

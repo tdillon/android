@@ -7,7 +7,7 @@ android:
   - android-23
   - extra
   - add-on
-script: build.sh
+script: ./build.sh
 before_install:
 - openssl aes-256-cbc -K $encrypted_ac5b2a59fcae_key -iv $encrypted_ac5b2a59fcae_iv
   -in secrets.tar.enc -out secrets.tar -d

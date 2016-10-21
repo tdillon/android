@@ -13,8 +13,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setTitle("Tim is the best!");
-
-        TextView tv = (TextView)findViewById(R.id.txt);
-        tv.setText(System.getenv("secret_api_key"));
     }
 }
